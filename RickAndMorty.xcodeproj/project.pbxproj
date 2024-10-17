@@ -13,28 +13,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48C35D162CBFF6020012F917 /* FavAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C35D162CBFF6020012F917 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C35D272CBFF65D0012F917 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		48C35D292CBFF7B10012F917 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		485913F22CC186A300F9DCE8 /* Exceptions for "FavAppDemo" folder in "FavAppDemo" target */ = {
+		485913F22CC186A300F9DCE8 /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 48C35D152CBFF6020012F917 /* FavAppDemo */;
+			target = 48C35D152CBFF6020012F917 /* RickAndMorty */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		48C35D182CBFF6020012F917 /* FavAppDemo */ = {
+		48C35D182CBFF6020012F917 /* RickAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				485913F22CC186A300F9DCE8 /* Exceptions for "FavAppDemo" folder in "FavAppDemo" target */,
+				485913F22CC186A300F9DCE8 /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */,
 			);
-			path = FavAppDemo;
+			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -56,7 +56,7 @@
 			children = (
 				48C35D292CBFF7B10012F917 /* .gitignore */,
 				48C35D272CBFF65D0012F917 /* README.md */,
-				48C35D182CBFF6020012F917 /* FavAppDemo */,
+				48C35D182CBFF6020012F917 /* RickAndMorty */,
 				48C35D172CBFF6020012F917 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,7 +64,7 @@
 		48C35D172CBFF6020012F917 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48C35D162CBFF6020012F917 /* FavAppDemo.app */,
+				48C35D162CBFF6020012F917 /* RickAndMorty.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,9 +72,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48C35D152CBFF6020012F917 /* FavAppDemo */ = {
+		48C35D152CBFF6020012F917 /* RickAndMorty */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48C35D242CBFF6030012F917 /* Build configuration list for PBXNativeTarget "FavAppDemo" */;
+			buildConfigurationList = 48C35D242CBFF6030012F917 /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
 				48C35D122CBFF6020012F917 /* Sources */,
 				48C35D132CBFF6020012F917 /* Frameworks */,
@@ -85,14 +85,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				48C35D182CBFF6020012F917 /* FavAppDemo */,
+				48C35D182CBFF6020012F917 /* RickAndMorty */,
 			);
-			name = FavAppDemo;
+			name = RickAndMorty;
 			packageProductDependencies = (
 				48D8419E2CC106D30086C2F3 /* Alamofire */,
 			);
 			productName = FavAppDemo;
-			productReference = 48C35D162CBFF6020012F917 /* FavAppDemo.app */;
+			productReference = 48C35D162CBFF6020012F917 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 48C35D112CBFF6020012F917 /* Build configuration list for PBXProject "FavAppDemo" */;
+			buildConfigurationList = 48C35D112CBFF6020012F917 /* Build configuration list for PBXProject "RickAndMorty" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				48C35D152CBFF6020012F917 /* FavAppDemo */,
+				48C35D152CBFF6020012F917 /* RickAndMorty */,
 			);
 		};
 /* End PBXProject section */
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48C35D112CBFF6020012F917 /* Build configuration list for PBXProject "FavAppDemo" */ = {
+		48C35D112CBFF6020012F917 /* Build configuration list for PBXProject "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48C35D222CBFF6030012F917 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48C35D242CBFF6030012F917 /* Build configuration list for PBXNativeTarget "FavAppDemo" */ = {
+		48C35D242CBFF6030012F917 /* Build configuration list for PBXNativeTarget "RickAndMorty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				48C35D252CBFF6030012F917 /* Debug */,
