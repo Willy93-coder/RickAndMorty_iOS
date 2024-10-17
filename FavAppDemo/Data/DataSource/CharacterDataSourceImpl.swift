@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import Alamofire
 
 struct CharacterDataSourceImpl: CharacterDataSource {
-    func getAllCharacters() -> [Character] {
-        return [
-            Character(id: 1, name: "Rick Sanchez", image: "", species: "Human", gender: "Male", created: "2017-11-04"),
-            Character(id: 2, name: "Morty Smith", image: "", species: "Human", gender: "Male", created: "2017-11-04"),
-            Character(id: 3, name: "Summer Smith", image: "", species: "Human", gender: "Female", created: "2017-11-04"),
-        ]
+    func getAllCharacters() async -> [Character] {
+        do {
+            let response = try await AF.request("https://rickandmortyapi.com/api/character")
+                .serializingDecodable(CharactersList.self)
+                .value
+            return response.charactersList
+        } catch {
+            print("Error fetching characters: \(error)")
+            return []
+        }
     }
 }
