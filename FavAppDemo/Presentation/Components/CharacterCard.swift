@@ -11,8 +11,6 @@ struct CharacterCard: View {
     
     var image: URL?
     var name: String?
-    var gender: String?
-    var species: String?
     
     var body: some View {
         HStack {
