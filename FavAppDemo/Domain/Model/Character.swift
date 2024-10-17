@@ -8,10 +8,14 @@
 import Foundation
 
 struct Character: Identifiable {
-    let id: Int
-    let name: String
-    let image: String
-    let species: String
-    let gender: String
-    let created: String
+    var id: Int
+    var name: String
+    var image: String
+    var species: String
+    var gender: String
+    var created: String
+    
+    var imageURL: URL {
+        URL(string: image)!
+    }
 }
