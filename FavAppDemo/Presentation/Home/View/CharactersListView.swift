@@ -9,18 +9,18 @@ import SwiftUI
 
 struct CharactersListView: View {
     
-    @StateObject private var viewModel = CharactersListViewModel()
+    @EnvironmentObject private var viewModel: CharactersListViewModel
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.characters) { character in
                     Section {
-                        CharacterRow(image: character.image, name: character.name, gender: character.gender, species: character.species)
+                        CharacterCard(image: character.imageURL, name: character.name)
                     }
                 }
             }.task {
-                viewModel.getCharacters()
+                await viewModel.getCharacters()
             }
             .navigationTitle("Characters")
         }
