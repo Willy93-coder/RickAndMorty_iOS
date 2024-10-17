@@ -12,15 +12,19 @@ enum UseCaseError: Error {
 }
 
 protocol GetAllCharacterProtocol {
-    func fetchAllCharacters() -> Result<[Character], UseCaseError>
+    func fetchAllCharacters() async -> Result<[Character], UseCaseError>
 }
 
 
 struct GetAllCharactersUseCase: GetAllCharacterProtocol {
     var repository: CharacterRepository
     
-    func fetchAllCharacters() -> Result<[Character], UseCaseError> {
-        let characters = repository.fetchAllCharacters()
-        return .success(characters)
+    func fetchAllCharacters() async -> Result<[Character], UseCaseError> {
+        do {
+            let characters = try await repository.fetchAllCharacters()
+            return .success(characters)
+        } catch {
+            return .failure(.undefinedError)
+        }
     }
 }

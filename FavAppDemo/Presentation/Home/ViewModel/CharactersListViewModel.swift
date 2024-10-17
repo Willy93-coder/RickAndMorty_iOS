@@ -8,12 +8,16 @@
 import Foundation
 
 class CharactersListViewModel: ObservableObject {
-    var getCharactersUseCase = GetAllCharactersUseCase(repository: CharacterRepositoryImpl(dataSource: CharacterDataSourceImpl()))
+    var getCharactersUseCase: GetAllCharacterProtocol
     
     @Published var characters: [Character] = []
     
-    func getCharacters() {
-        let result = getCharactersUseCase.fetchAllCharacters()
+    init(getCharactersUseCase: GetAllCharacterProtocol = GetAllCharactersUseCase(repository: CharacterRepositoryImpl(dataSource: CharacterDataSourceImpl()))) {
+        self.getCharactersUseCase = getCharactersUseCase
+    }
+    
+    @MainActor func getCharacters() async {
+        let result = await getCharactersUseCase.fetchAllCharacters()
         switch result {
         case .success(let characters):
             self.characters = characters

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character: Identifiable {
+struct Character: Decodable ,Identifiable {
     var id: Int
     var name: String
     var image: String
