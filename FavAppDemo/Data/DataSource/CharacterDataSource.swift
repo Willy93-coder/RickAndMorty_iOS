@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CharacterDataSource {
-    func getAllCharacters() -> [Character]
+    func getAllCharacters() async throws -> [Character]
 }
