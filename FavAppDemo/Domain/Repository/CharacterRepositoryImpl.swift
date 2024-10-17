@@ -11,7 +11,7 @@ struct CharacterRepositoryImpl: CharacterRepository {
    
     var dataSource: CharacterDataSource
     
-    func fetchAllCharacters() -> [Character] {
-        return dataSource.getAllCharacters()
+    func fetchAllCharacters() async throws -> [Character] {
+        return try await dataSource.getAllCharacters()
     }
 }
