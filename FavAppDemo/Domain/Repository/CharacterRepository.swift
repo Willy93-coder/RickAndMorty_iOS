@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CharacterRepository {
-    func fetchAllCharacters() -> [Character]
+    func fetchAllCharacters() async throws -> [Character]
 }
