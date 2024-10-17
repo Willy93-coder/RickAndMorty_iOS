@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct CharactersListView: View {
+    
+    @StateObject private var viewModel = CharactersListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(viewModel.characters) { character in
+                    Section {
+                        CharacterRow(image: character.image, name: character.name, gender: character.gender, species: character.species)
+                    }
+                }
+            }.task {
+                viewModel.getCharacters()
+            }
+            .navigationTitle("Characters")
+        }
     }
 }
 
