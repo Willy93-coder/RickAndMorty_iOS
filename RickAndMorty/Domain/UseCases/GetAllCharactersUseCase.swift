@@ -11,12 +11,12 @@ enum UseCaseError: Error {
     case networkError, decodingError, undefinedError
 }
 
-protocol GetAllCharacterProtocol {
+protocol GetAllCharactersProtocol {
     func fetchAllCharacters() async -> Result<[Character], UseCaseError>
 }
 
 
-struct GetAllCharactersUseCase: GetAllCharacterProtocol {
+struct GetAllCharactersUseCase: GetAllCharactersProtocol {
     var repository: CharacterRepository
     
     func fetchAllCharacters() async -> Result<[Character], UseCaseError> {
