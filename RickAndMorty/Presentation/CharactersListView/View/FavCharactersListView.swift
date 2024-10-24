@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavCharactersListView: View {
     
-    @EnvironmentObject var viewModel: FavCharactersListViewModel
+    @EnvironmentObject var viewModel: CharactersListViewModel
     
     var body: some View {
         NavigationStack {
@@ -20,9 +20,7 @@ struct FavCharactersListView: View {
                     List {
                         ForEach(viewModel.favCharacters) { character in
                             Section {
-                                CharacterCard(character: character, isLiked: viewModel.isLiked(id: character.id), toggleLike: {
-                                    viewModel.toggleLike(character)
-                                })
+                                CharacterCard(character: character)
                             }
                         }
                     }
