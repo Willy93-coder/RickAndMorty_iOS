@@ -34,7 +34,7 @@ struct CharacterCard: View {
                         .fontWeight(.bold)
                 }
                 Spacer()
-                LikeButton(character: character)
+                FavouriteButton(character: character)
             }
         } else {
             Text("No characters")
