@@ -12,24 +12,17 @@ class FavouriteManager: ObservableObject {
     static let key = "favCharacters"
     @Published var favCharacters: [Int] = []
     
-    init() {
-        favCharacters = UserDefaults.standard.array(forKey: FavouriteManager.key) as? [Int] ?? []
-    }
+    init() {}
     
     func isFavourite(id: Int) -> Bool {
         return favCharacters.contains{ $0 == id }
     }
     
     func toggleLike(_ character: Character) {
-        if isFavourite(id: character.id) {
-            favCharacters.removeAll{ $0 == character.id }
-        } else {
+        if !isFavourite(id: character.id) {
             favCharacters.append(character.id)
+        } else {
+            favCharacters.removeAll{ $0 == character.id }
         }
-        saveLikedCharacters()
-    }
-    
-    private func saveLikedCharacters() {
-        UserDefaults.standard.set(favCharacters, forKey: FavouriteManager.key)
     }
 }
