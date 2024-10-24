@@ -9,7 +9,14 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            Tab("Favourite", systemImage: "medal.star.fill") {
+                FavCharactersListView()
+            }
+            Tab("Characters", systemImage: "list.clipboard.fill") {
+                CharactersListView()
+            }
+        }
     }
 }
 
