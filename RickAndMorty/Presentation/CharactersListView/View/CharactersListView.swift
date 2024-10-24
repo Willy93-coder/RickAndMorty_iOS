@@ -9,14 +9,14 @@ import SwiftUI
 
 struct CharactersListView: View {
     
-    @EnvironmentObject private var viewModel: CharactersListViewModel
+    @EnvironmentObject var viewModel: CharactersListViewModel
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.characters) { character in
                     Section {
-                        CharacterCard(image: character.imageURL, name: character.name)
+                        CharacterCard(character: character)
                     }
                 }
             }.task {
