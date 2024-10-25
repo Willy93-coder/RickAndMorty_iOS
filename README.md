@@ -63,12 +63,12 @@ RickAndMorty
 ## Screenshots
 
 <div>
-    <img src="RickAndMorty/images/launch_screen.png" alt="Launch screen" />
-    <img src="RickAndMorty/images/fav_tab_view_empty.png" alt="Favourite tab view empty" />
-    <img src="RickAndMorty/images/list_tab_view.png" alt="Character list tab view" />
+    <img src="./images/launch_screen.png" alt="Launch screen" />
+    <img src="./images/fav_tab_view_empty.png" alt="Favourite tab view empty" />
+    <img src="./images/list_tab_view.png" alt="Character list tab view" />
 </div>
 
 <div>
-    <img src="RickAndMorty/images/fav_tab_view.png" alt="Favourite tab view with characters" />
-    <img src="RickAndMorty/images/list_tab_view_stars.png" alt="Character list tab view with favs" />
+    <img src="./images/fav_tab_view.png" alt="Favourite tab view with characters" />
+    <img src="./images/list_tab_view_stars.png" alt="Character list tab view with favs" />
 </div>
