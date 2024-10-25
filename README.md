@@ -69,6 +69,6 @@ RickAndMorty
 </div>
 
 <div>
-    <img src="./images/fav_tab_view.png" alt="Favourite tab view with characters" />
+    <img src="./images/fav_tab_view_list.png" alt="Favourite tab view with characters" />
     <img src="./images/list_tab_view_stars.png" alt="Character list tab view with favs" />
 </div>
