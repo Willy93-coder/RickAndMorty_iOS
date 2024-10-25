@@ -29,6 +29,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		483022CA2CCBFF220076E267 /* images */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = images;
+			sourceTree = "<group>";
+		};
 		48C35D182CBFF6020012F917 /* RickAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -55,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				48C35D292CBFF7B10012F917 /* .gitignore */,
+				483022CA2CCBFF220076E267 /* images */,
 				48C35D272CBFF65D0012F917 /* README.md */,
 				48C35D182CBFF6020012F917 /* RickAndMorty */,
 				48C35D172CBFF6020012F917 /* Products */,
@@ -85,6 +91,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				483022CA2CCBFF220076E267 /* images */,
 				48C35D182CBFF6020012F917 /* RickAndMorty */,
 			);
 			name = RickAndMorty;
@@ -296,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willytech.rickandmorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willytech.rickandmortyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -326,7 +333,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.willytech.rickandmorty;
+				PRODUCT_BUNDLE_IDENTIFIER = com.willytech.rickandmortyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
