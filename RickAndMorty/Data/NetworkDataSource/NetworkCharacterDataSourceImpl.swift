@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import Alamofire
 
 struct CharacterDataSourceImpl: CharacterDataSource {
+    
+    let url  = URLRequest(url: URL(string: "https://rickandmortyapi.com/api/character")!)
     func getAllCharacters() async -> [Character] {
         do {
             let response = try await AF.request("https://rickandmortyapi.com/api/character")

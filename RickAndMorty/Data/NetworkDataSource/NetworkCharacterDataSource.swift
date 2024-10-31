@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CharacterDataSource {
+protocol NetworkCharacterDataSource {
     func getAllCharacters() async throws -> [Character]
 }
