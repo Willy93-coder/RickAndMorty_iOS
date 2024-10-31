@@ -7,24 +7,19 @@
 
 import Foundation
 
-enum UseCaseError: Error {
-    case networkError, decodingError, undefinedError
+protocol GetAllCharactersUseCaseProtocol {
+    func fetchAllCharacters() async -> [Character]
 }
 
-protocol GetAllCharactersProtocol {
-    func fetchAllCharacters() async -> Result<[Character], UseCaseError>
-}
-
-
-struct GetAllCharactersUseCase: GetAllCharactersProtocol {
+struct GetAllCharactersUseCase: GetAllCharactersUseCaseProtocol {
     var repository: CharacterRepository
     
-    func fetchAllCharacters() async -> Result<[Character], UseCaseError> {
+    func fetchAllCharacters() async -> [Character] {
         do {
-            let characters = try await repository.fetchAllCharacters()
-            return .success(characters)
+            return try await repository.fetchAllCharacters()
         } catch {
-            return .failure(.undefinedError)
+            print("Error fetching characters: \(error.localizedDescription)")
+            return []
         }
     }
 }
