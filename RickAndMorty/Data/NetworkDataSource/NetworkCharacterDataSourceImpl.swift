@@ -7,17 +7,30 @@
 
 import Foundation
 
-struct CharacterDataSourceImpl: CharacterDataSource {
+struct NetworkCharacterDataSourceImpl: NetworkCharacterDataSource {
     
-    let url  = URLRequest(url: URL(string: "https://rickandmortyapi.com/api/character")!)
-    func getAllCharacters() async -> [Character] {
+    let url  = URL(string: "https://rickandmortyapi.com/api/character")!
+    
+    func fetchAllCharacters() async throws -> [Character] {
+        let (data, httpResponse)  = try await URLSession.shared.data(from: url)
+        return handleResponse(data: data, httpResponse: httpResponse)
+    }
+    
+    private func handleResponse(data: Data?, httpResponse: URLResponse?) -> [Character] {
+        guard
+            let data = data,
+            let httpResponse = httpResponse as? HTTPURLResponse,
+            httpResponse.statusCode == 200 else { return [] }
+        
+        return decodeData(data: data)
+    }
+    
+    private func decodeData(data: Data) -> [Character] {
         do {
-            let response = try await AF.request("https://rickandmortyapi.com/api/character")
-                .serializingDecodable(CharactersList.self)
-                .value
-            return response.charactersList
+            let decodeData = try JSONDecoder().decode(CharactersList.self, from: data)
+            return decodeData.charactersList
         } catch {
-            print("Error fetching characters: \(error)")
+            print("Error to decode data: \(error.localizedDescription)")
             return []
         }
     }
