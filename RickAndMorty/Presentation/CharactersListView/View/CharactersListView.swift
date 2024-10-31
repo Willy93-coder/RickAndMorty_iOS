@@ -20,7 +20,7 @@ struct CharactersListView: View {
                     }
                 }
             }.task {
-                await viewModel.getCharacters()
+                await viewModel.getCharactersList()
             }
             .navigationTitle("Characters")
         }
