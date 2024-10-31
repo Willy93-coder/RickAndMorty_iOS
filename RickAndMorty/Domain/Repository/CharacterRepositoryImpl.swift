@@ -9,9 +9,9 @@ import Foundation
 
 struct CharacterRepositoryImpl: CharacterRepository {
    
-    var dataSource: CharacterDataSource
+    var dataSource: NetworkCharacterDataSource
     
     func fetchAllCharacters() async throws -> [Character] {
-        return try await dataSource.getAllCharacters()
+        return try await dataSource.fetchAllCharacters()
     }
 }

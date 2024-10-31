@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		48C35D282CBFF65D0012F917 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 48C35D272CBFF65D0012F917 /* README.md */; };
 		48C35D2A2CBFF7B10012F917 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48C35D292CBFF7B10012F917 /* .gitignore */; };
-		48D8419F2CC106D30086C2F3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48D8419E2CC106D30086C2F3 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48D8419F2CC106D30086C2F3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +94,6 @@
 			);
 			name = RickAndMorty;
 			packageProductDependencies = (
-				48D8419E2CC106D30086C2F3 /* Alamofire */,
 			);
 			productName = FavAppDemo;
 			productReference = 48C35D162CBFF6020012F917 /* RickAndMorty.app */;
@@ -127,7 +124,6 @@
 			mainGroup = 48C35D0D2CBFF6020012F917;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				48D8419D2CC106D30086C2F3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 48C35D172CBFF6020012F917 /* Products */;
@@ -363,25 +359,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		48D8419D2CC106D30086C2F3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.8.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		48D8419E2CC106D30086C2F3 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 48D8419D2CC106D30086C2F3 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48C35D0E2CBFF6020012F917 /* Project object */;
 }
