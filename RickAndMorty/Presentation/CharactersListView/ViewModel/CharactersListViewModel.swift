@@ -8,23 +8,20 @@
 import Foundation
 
 class CharactersListViewModel: ObservableObject {
-    var getAllCharactersUseCase: GetAllCharactersProtocol
+    private var getAllCharactersUseCase: GetAllCharactersUseCaseProtocol
     
     @Published var characters: [Character] = []
     @Published var favCharacters: [Character] = []
     var likesManager: FavouriteManager = FavouriteManager()
     
-    init(getCharactersUseCase: GetAllCharactersProtocol = GetAllCharactersUseCase(repository: CharacterRepositoryImpl(dataSource: CharacterDataSourceImpl()))) {
+    init(getCharactersUseCase: GetAllCharactersUseCaseProtocol = GetAllCharactersUseCase(repository: CharacterRepositoryImpl(dataSource: NetworkCharacterDataSourceImpl()))) {
         self.getAllCharactersUseCase = getCharactersUseCase
     }
     
-    @MainActor func getCharacters() async {
-        let result = await getAllCharactersUseCase.fetchAllCharacters()
-        switch result {
-        case .success(let characters):
-            self.characters = characters
-        case .failure(let error):
-            print(error)
+    func getCharactersList() async {
+        let charactersList = await getAllCharactersUseCase.fetchAllCharacters()
+        await MainActor.run {
+            characters.self = charactersList
         }
     }
     
