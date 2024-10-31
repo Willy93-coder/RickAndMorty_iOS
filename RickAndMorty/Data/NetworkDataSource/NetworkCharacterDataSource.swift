@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkCharacterDataSource {
-    func getAllCharacters() async throws -> [Character]
+    func fetchAllCharacters() async throws -> [Character]
 }
