@@ -11,13 +11,11 @@ import SwiftUI
 struct FavAppDemoApp: App {
     
     var charactersListViewModel = CharactersListViewModel()
-    var likeManager = FavouriteManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(charactersListViewModel)
-                .environmentObject(likeManager)
         }
     }
 }
