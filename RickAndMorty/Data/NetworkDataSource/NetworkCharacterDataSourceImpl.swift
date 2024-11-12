@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkCharacterDataSourceImpl: NetworkCharacterDataSource {
+struct NetworkCharacterDataSourceImpl: NetworkCharacterDataSourceProtocols {
     
     let url  = URL(string: "https://rickandmortyapi.com/api/character")!
     
