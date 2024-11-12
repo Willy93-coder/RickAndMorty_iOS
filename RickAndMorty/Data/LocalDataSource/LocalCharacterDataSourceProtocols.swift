@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol LocalCharacterDataSourceProtocols {
+    func fetchAllFavoriteCharactersId() throws -> [FavCharacterId]
+    
+    func insertFavoriteCharacterId(_ favCharacterId: FavCharacterId) throws
+    
+    func removeFavoriteCharacterId(_ characterId: Int) throws
+}
