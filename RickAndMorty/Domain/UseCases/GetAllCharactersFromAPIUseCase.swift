@@ -11,7 +11,7 @@ protocol GetAllCharactersFromAPIUseCaseProtocol {
     func fetchAllCharacters() async -> [Character]
 }
 
-struct GetAllCharactersUseCase: GetAllCharactersFromAPIUseCaseProtocol {
+struct GetAllCharactersFromAPIUseCase: GetAllCharactersFromAPIUseCaseProtocol {
     var repository: CharacterRepositoryProtocols
     
     func fetchAllCharacters() async -> [Character] {
