@@ -9,16 +9,14 @@ import SwiftUI
 
 struct FavouriteButton: View {
     
-    @EnvironmentObject var likeManager: FavouriteManager
     @EnvironmentObject var characterViewModel: CharactersListViewModel
     var character: Character
     
     var body: some View {
-        Image(systemName: likeManager.isFavourite(id: character.id) ? "star.fill" : "star")
+        Image(systemName: characterViewModel.isFavourite(character.id) ? "star.fill" : "star")
             .foregroundStyle(.yellow)
-            .accessibilityLabel(likeManager.isFavourite(id: character.id) ? "Dislike" : "Like")
+            .accessibilityLabel(characterViewModel.isFavourite(character.id) ? "Dislike" : "Like")
             .onTapGesture {
-                likeManager.toggleLike(character)
                 characterViewModel.updateFavCharactersList(character)
             }
     }
