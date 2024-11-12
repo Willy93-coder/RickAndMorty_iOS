@@ -7,11 +7,24 @@
 
 import Foundation
 
-struct CharacterRepositoryImpl: CharacterRepository {
-   
-    var dataSource: NetworkCharacterDataSource
+struct CharacterRepositoryImpl: CharacterRepositoryProtocols {
+
+    var networkDataSource: NetworkCharacterDataSourceProtocols
+    var localDataSource: LocalCharacterDataSourceProtocols
     
-    func fetchAllCharacters() async throws -> [Character] {
-        return try await dataSource.fetchAllCharacters()
+    func fetchAllCharactersFromNetwork() async throws -> [Character] {
+        return try await networkDataSource.fetchAllCharacters()
+    }
+    
+    func fectFavCharactersIdFromLocalDatabase() throws -> [FavCharacterId] {
+        return try localDataSource.fetchAllFavoriteCharactersId()
+    }
+    
+    func insertFavCharacterIdIntoLocalDatabase(favCharacterId: FavCharacterId) throws {
+        try localDataSource.insertFavoriteCharacterId(favCharacterId)
+    }
+    
+    func removeFavCharacterIdFromLocalDatabase(characterId: Int) throws {
+        try localDataSource.removeFavoriteCharacterId(characterId)
     }
 }
