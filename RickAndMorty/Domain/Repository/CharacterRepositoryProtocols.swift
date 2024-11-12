@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol CharacterRepository {
+protocol CharacterRepositoryProtocols {
     func fetchAllCharacters() async throws -> [Character]
 }

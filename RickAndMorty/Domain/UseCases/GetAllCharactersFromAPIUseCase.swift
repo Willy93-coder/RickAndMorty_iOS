@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol GetAllCharactersUseCaseProtocol {
+protocol GetAllCharactersFromAPIUseCaseProtocol {
     func fetchAllCharacters() async -> [Character]
 }
 
-struct GetAllCharactersUseCase: GetAllCharactersUseCaseProtocol {
-    var repository: CharacterRepository
+struct GetAllCharactersUseCase: GetAllCharactersFromAPIUseCaseProtocol {
+    var repository: CharacterRepositoryProtocols
     
     func fetchAllCharacters() async -> [Character] {
         do {
-            return try await repository.fetchAllCharacters()
+            return try await repository.fetchAllCharactersFromNetwork()
         } catch {
             print("Error fetching characters: \(error.localizedDescription)")
             return []
