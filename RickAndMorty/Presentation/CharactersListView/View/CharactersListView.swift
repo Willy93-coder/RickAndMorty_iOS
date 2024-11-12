@@ -19,8 +19,6 @@ struct CharactersListView: View {
                         CharacterCard(character: character)
                     }
                 }
-            }.task {
-                await viewModel.getCharactersList()
             }
             .navigationTitle("Characters")
         }
