@@ -8,5 +8,11 @@
 import Foundation
 
 protocol CharacterRepositoryProtocols {
-    func fetchAllCharacters() async throws -> [Character]
+    func fetchAllCharactersFromNetwork() async throws -> [Character]
+    
+    func fectFavCharactersIdFromLocalDatabase() throws -> [FavCharacterId]
+    
+    func insertFavCharacterIdIntoLocalDatabase(favCharacterId: FavCharacterId) throws
+    
+    func removeFavCharacterIdFromLocalDatabase(characterId: Int) throws
 }
