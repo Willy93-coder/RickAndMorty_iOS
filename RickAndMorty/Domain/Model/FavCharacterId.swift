@@ -9,15 +9,11 @@ import Foundation
 import SwiftData
 
 @Model
-class FavCharactersIdList: Identifiable, Hashable {
-    
+class FavCharacterId: Identifiable, Hashable {
     @Attribute(.unique)
-    var identifier: UUID
+    var favCharacterId: Int
     
-    var FavCharacterId: Int
-    
-    init(identifier: UUID = UUID(), FavCharactersIdList: Int) {
-        self.identifier = identifier
-        self.FavCharacterId = FavCharactersIdList
+    init(favCharactersId: Int) {
+        self.favCharacterId = favCharactersId
     }
 }
