@@ -38,7 +38,7 @@ class CharactersListViewModel: ObservableObject {
     func getCharactersList() async {
         let charactersList = await getAllCharactersUseCase.fetchAllCharacters()
         await MainActor.run {
-            characters.self = charactersList
+            self.characters = charactersList
         }
     }
     
@@ -63,7 +63,7 @@ class CharactersListViewModel: ObservableObject {
     }
     
     private func fectchAllFavCharactersFromLocalDatabase() {
-        favCharactersId.self = getAllCharactersIdFromLocalDatabaseUseCase.execute()
+        self.favCharactersId = getAllCharactersIdFromLocalDatabaseUseCase.execute()
     }
     
     private func insertFavCharacterIdIntoLocalDatabase(_ favCharacterId: Int) {
